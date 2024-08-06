@@ -286,7 +286,7 @@ jobs:
           ln -sf /builder/build ${GITHUB_WORKSPACE}/build
           ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
           # 下载扩展软件安装
-          wget -P ./build/userpatches http://fw.wghao.com/lib.config
+          wget -P ./build/userpatches http://fw.wghaos.com/lib.config
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile Armbian [ ${{ inputs.set_release }} ]
