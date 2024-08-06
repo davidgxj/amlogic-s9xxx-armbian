@@ -286,7 +286,7 @@ jobs:
           ln -sf /builder/build ${GITHUB_WORKSPACE}/build
           ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
           # 下载扩展软件安装
-          wget -P ./build/userpatches http://fw.wghaos.com/lib.config
+          # wget -P ./build/userpatches http://fw.wghaos.com/lib.config
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile Armbian [ ${{ inputs.set_release }} ]
@@ -298,7 +298,7 @@ jobs:
           cd build/
               ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=odroidn2 BRANCH=current BUILD_MINIMAL=yes \
                            BUILD_ONLY=default HOST=armbian BUILD_DESKTOP=no EXPERT=yes KERNEL_CONFIGURE=no \
-                           COMPRESS_OUTPUTIMAGE="sha" SHARE_LOG=yes
+                           COMPRESS_OUTPUTIMAGE="sha" SHARE_LOG=yes EXTRA_PACKAGES_IMAGE="avahi-daemon"
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Organize files and clear space
