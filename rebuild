@@ -629,7 +629,7 @@ make_image() {
     }
     [[ "${PLATFORM}" == "rockchip" ]] && {
         skip_mb="16"
-        partition_table_type="gpt"
+        partition_table_type="msdos"
         bootfs_type="fat32"
     }
     [[ "${PLATFORM}" == "allwinner" ]] && {
